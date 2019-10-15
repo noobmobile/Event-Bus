@@ -6,6 +6,7 @@ import com.dont.eventbus.models.Listener;
 
 public class Teste implements Listener{
 
+	
 	@EventHandler
 	public void onTeste(PlayerDeathEvent e) {
 		System.out.println("a");

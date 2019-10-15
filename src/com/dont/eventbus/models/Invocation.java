@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 
+
 /**
  * Wrapper class holding the method to invoke and the target object,
  * serving as invokable values to be user inside the EventBus
