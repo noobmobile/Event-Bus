@@ -6,20 +6,15 @@ import com.dont.eventbus.models.Listener;
 
 public class Teste implements Listener{
 
-	
 	@EventHandler
-	public void onTeste(PlayerDeathEvent e) {
-		System.out.println("a");
-	}
-	
-	@EventHandler
-	public void onTeste2(PlayerDeathEvent e) {
-		System.out.println("b");
-	}
-	
-	@EventHandler
-	public void onTeste3(PlayerSpawnEvent e) {
-		System.out.println("c");
+	public void onTeste3(MessagePostEvent e) {
+		if (e.getMessage().equalsIgnoreCase("teste1")) {
+			e.setMessage(e.getMessage()+" modificado");
+		} else if (e.getMessage().equalsIgnoreCase("teste2")) {
+			e.setCancelled(true);
+			System.out.println("--- mensagem cancelada ---");
+		}
+		
 	}
 	
 }
