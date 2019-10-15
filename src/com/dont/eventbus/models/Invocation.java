@@ -14,12 +14,13 @@ import java.util.Objects;
 public final class Invocation {
 
   private final Method handler;
-
   private final Object targetObject;
-
-  public Invocation(Method handler, Object targetObject) {
+  private final EventPriority priority;
+  
+  public Invocation(Method handler, Object targetObject, EventPriority priority) {
     this.handler = handler;
     this.targetObject = targetObject;
+    this.priority = priority;
   }
 
   @Override
@@ -40,6 +41,8 @@ public final class Invocation {
     return Objects.hash(handler, targetObject);
   }
 
+  
+  
   public void invoke(Object object) {
     try {
       handler.invoke(targetObject, object);
@@ -47,4 +50,11 @@ public final class Invocation {
       e.printStackTrace();
     }
   }
+
+/**
+ * @return the priority
+ */
+public EventPriority getEventPriority() {
+	return priority;
+}
 }

@@ -8,7 +8,7 @@ public class MessageManager {
 		MessagePostEvent event = new MessagePostEvent(message);
 		EventManager.callEvent(event);
 		if (!event.isCancelled()) {
-			System.out.println("mensagem recebida: "+message);
+			System.out.println("mensagem recebida: "+event.getMessage());
 		}
 	}
 	
