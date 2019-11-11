@@ -12,6 +12,8 @@ public class Main {
 		MessageManager.postMessage("teste1");
 		MessageManager.postMessage("teste2");
 		MessageManager.postMessage("tudo bem?");
+		EventManager.unregisterEvents(Teste.class);
+		MessageManager.postMessage("teste2");
 	}
 
 }
