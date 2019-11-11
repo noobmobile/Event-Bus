@@ -32,6 +32,10 @@ public class EventBus {
 		}
 	}
 
+	public void unregisterEvents(Class<? extends Listener> listener) {
+		invocations.values().forEach(invocations -> invocations.removeIf(invocation -> invocation.getMethodOwner().equals(listener)));
+	}
+	
 	public void registerEvents(Listener listener) {
 		List<Method> methods = getHandlerMethods(listener.getClass());
 		methods.forEach(method -> {
