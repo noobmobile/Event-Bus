@@ -14,10 +14,10 @@ import java.util.Objects;
 public final class Invocation {
 
   private final Method handler;
-  private final Object targetObject;
+  private final Listener targetObject;
   private final EventPriority priority;
   
-  public Invocation(Method handler, Object targetObject, EventPriority priority) {
+  public Invocation(Method handler, Listener targetObject, EventPriority priority) {
     this.handler = handler;
     this.targetObject = targetObject;
     this.priority = priority;
