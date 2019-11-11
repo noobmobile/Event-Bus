@@ -18,5 +18,8 @@ public class EventManager {
 		EVENT_BUS.registerEvents(listener);
 	}
 	
+	public static void unregisterEvents(Class<? extends Listener> listener) {
+		EVENT_BUS.unregisterEvents(listener);
+	}
 	
 }
