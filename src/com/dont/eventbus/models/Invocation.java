@@ -51,6 +51,10 @@ public final class Invocation {
     }
   }
 
+	public Class<? extends Listener> getMethodOwner(){
+	  return targetObject.getClass();
+  }
+	
 /**
  * @return the priority
  */
